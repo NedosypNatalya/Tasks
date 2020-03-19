@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body>
+    <div class="document">
+        {%block top%}{%endblock%}
+        {%block document%}{%endblock%}
+        <div class="footer">
+            <div class="logo">
+                <div class="logo__image">
+                    <img alt="logo" src="./assets/image/logo.png">
+                </div>
+                <div class="logo__header">Tasks</div>
+            </div>
+            <div class="footer__info"><a href="https://nedosypnatalya.github.io/">&#169; Недосып Наталия</a>, 2020</div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    {%block script%}{%endblock%}
+</body>
+</html>

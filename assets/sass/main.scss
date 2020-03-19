@@ -1,0 +1,365 @@
+$white: white;
+$grey: rgb(223, 222, 222);
+$dark-grey: rgb(133, 133, 133);
+$red: rgb(204, 52, 52);
+$green: rgb(53, 129, 180);
+$green2:rgb(3, 146, 103);
+$black: rgb(66, 66, 66);
+$yellow: rgb(243, 243, 93);
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+.gallery{
+    &__big-image img{
+        width: 540px;
+    }
+    &__small-images img{
+        max-width: 132px;
+        cursor: pointer;
+    }
+}
+.main{
+    background-image: url(../image/main.jpg);
+    &-info{
+        text-align: center;
+        margin-top: 30px;
+        &__content,&__gallery{
+            display: inline-block;
+            margin: 20px;
+        }
+        &__header, &__paragraph{
+            text-align: left;
+        }
+        &__paragraph{
+            color: $white;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        &__link{
+            border-radius: 30px;
+            padding: 10px;
+            width: 100px;
+            margin: 40px;
+            margin-right: 70px;
+            &_signin{
+                background-color: $red;
+            }
+            &_register{
+                background-color: $green;
+            }
+        }
+    }
+}
+a{
+    display: inline-block;
+}
+.logo{
+    &__image{
+        img{
+            width: 50px;
+        }
+        margin-left: 30px;
+    }
+    &__header{
+        color: $white;
+        font-size: 34pt;
+    }
+    &__image, &__header{
+        display: inline-block;
+        margin-top: 20px;
+    }
+}
+.header{
+    font-size: 30pt;
+    color: $white;
+}
+.link{
+    display: inline-block;
+    text-decoration: none;
+    color: $grey;
+}
+.arrow{
+    text-align: center;
+    &__image{
+        padding: 10px;
+        img{
+            width: 100px;
+        }
+    }
+}
+.about{
+    text-align: center;
+    &__card{
+        display: inline-block;
+        max-width: 300px;
+        padding: 10px;
+        margin: 20px;
+    }
+    &__image{
+        img{
+            width: 150px;
+        }
+    }
+    &__title{
+        color: $green2;
+        padding: 20px;
+        font-size: 26pt;
+        font-weight: 300;
+    }
+    &__text{
+        color: $dark-grey;
+    }
+    &__info{
+        margin: 40px;
+    }
+}
+.footer, .top{
+    background-image: url(../image/main.jpg);
+    padding: 20px;
+    color: $white;
+    &__info{
+        a{
+            text-decoration: none;
+            color: $grey;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        text-align: center;
+    }
+}
+.top a{
+    text-decoration: none;
+}
+.title{
+    color: $dark-grey;
+    font-size: 30pt;
+}
+.register, .signin{
+    text-align: center;
+}
+.form{
+    max-width: 500px;
+    padding: 20px;
+    margin: auto;
+    input[type=submit]{
+        color: $white;
+        background-color: $green2;
+        border: none;
+        border-radius: 30px;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        min-width: 200px;
+    }
+    input[type=text], input[type=password]{
+        margin: 10px;
+        border: 1px solid $grey;
+        border-radius: 30px;
+        font-size: 18pt;
+    }
+    textarea{
+        border-radius: 30px;
+        padding: 10px;
+    }
+    select{
+        border-radius: 30px;
+        min-width: 200px;
+    }
+}
+.signin{
+    margin: 40px;
+    &__form{
+        max-width: 250px;
+        padding: 50px;
+    }
+}
+.info{
+    display: inline-block;
+    text-align: center;
+    a{
+        text-decoration: none;
+        color: $white;
+        background-color: $red;
+        border-radius: 30px;
+        padding: 10px;
+        margin: 10px;
+        width: 150px;
+        position: absolute;
+        right: 30px;
+        top: 30px;
+    }
+    &__text{
+        position: absolute;
+        left: 40%;
+        top: 30px;
+        font-size: 24pt;
+    }
+}
+.add-new-area{
+    max-width: 300px;
+    display: inline-block;
+    padding: 10px;
+}
+.areas{
+    max-width: 70%;
+    text-align: center;
+    display: inline-block;
+    padding: 20px;
+    a{
+        text-decoration: none;
+        color: $black;
+    }
+    &__block{
+        width: 300px;
+        margin: 20px;
+        display: inline-block;
+        padding: 10px;
+        text-align: center;
+        border-radius: 30px;
+        background-color: $grey;
+        min-height: 50px;
+        &:hover{
+            background-color: $dark-grey;
+        }
+    }
+}
+.back-list{
+    display: inline-block;
+    text-align: center;
+    a{
+        text-decoration: none;
+        color: $white;
+        background-color: $green;
+        border-radius: 30px;
+        padding: 10px;
+        margin: 10px;
+        width: 150px;
+        position: absolute;
+        right: 230px;
+        top: 30px;
+    }
+}
+.back-area{
+    display: inline-block;
+    text-align: center;
+    a{
+        text-decoration: none;
+        color: $white;
+        background-color: $green;
+        border-radius: 30px;
+        padding: 10px;
+        margin: 10px;
+        min-width: 150px;
+        position: absolute;
+        right: 430px;
+        top: 30px;
+    }
+}
+.settings{
+    display: inline-block;
+    img{
+        width: 30px;
+    }
+    a{
+        background-color: transparent;
+        border-radius: 0px;
+        display: inline-block;
+        width: 30px;
+        position: absolute;
+        top: 30px;
+        left: 400px;
+    }
+}
+.area-info{
+    display: inline-block;
+    background-color: $grey;
+    width: 30%;
+    padding: 40px;
+}
+.tasks{
+    display: inline-block;
+    padding: 20px;
+    position: absolute;
+    top: 130px;
+    &__task{
+        border: 1px solid $grey;
+        border-radius: 20px;
+        display: inline-block;
+        padding: 10px;
+        input[type=submit]{
+            background-color: $red;
+            border: none;
+            padding: 2px;
+            color: $white;
+            cursor: pointer;
+        }
+    }
+}
+ol a{
+    text-decoration: none;
+    color: $dark-grey;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.info-user{
+    text-align: center;
+    padding: 40px;
+}
+.info-task{
+    display: inline-block;
+    padding: 40px;
+    div{
+        margin: 20px;
+    }
+    input[type=submit]{
+        background-color: $red;
+        border: none;
+        padding: 2px;
+        color: $white;
+        cursor: pointer;
+    }
+}
+.delete-area{
+    position: absolute;
+    top: 40px;
+    left: 550px;
+    input{
+        border: none;
+        padding: 10px;
+        color: $white;
+        cursor: pointer;
+        background-color: $yellow;
+        border-radius: 30px;
+        font-size: 12pt;
+    }
+}
+.control{
+    text-align: center;
+    div{
+        display: inline-block;
+    }
+    table{
+        margin-top: 20px;
+        border-collapse: collapse;
+        td{
+            border: 1px solid $grey;
+            padding: 10px;
+        }
+        input[type=submit]{
+            background-color: $red;
+            border: none;
+            padding: 2px;
+            color: $white;
+            cursor: pointer;
+        }
+    }
+    &__users{
+        margin-left: 100px;
+        margin-bottom: 30px;
+    }
+}

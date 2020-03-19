@@ -1,0 +1,377 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+.gallery__big-image img {
+  width: 540px;
+}
+.gallery__small-images img {
+  max-width: 132px;
+  cursor: pointer;
+}
+
+.main {
+  background-image: url(../image/main.jpg);
+}
+.main-info {
+  text-align: center;
+  margin-top: 30px;
+}
+.main-info__content, .main-info__gallery {
+  display: inline-block;
+  margin: 20px;
+}
+.main-info__header, .main-info__paragraph {
+  text-align: left;
+}
+.main-info__paragraph {
+  color: white;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+.main-info__link {
+  border-radius: 30px;
+  padding: 10px;
+  width: 100px;
+  margin: 40px;
+  margin-right: 70px;
+}
+.main-info__link_signin {
+  background-color: #cc3434;
+}
+.main-info__link_register {
+  background-color: #3581b4;
+}
+
+a {
+  display: inline-block;
+}
+
+.logo__image {
+  margin-left: 30px;
+}
+.logo__image img {
+  width: 50px;
+}
+.logo__header {
+  color: white;
+  font-size: 34pt;
+}
+.logo__image, .logo__header {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.header {
+  font-size: 30pt;
+  color: white;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  color: #dfdede;
+}
+
+.arrow {
+  text-align: center;
+}
+.arrow__image {
+  padding: 10px;
+}
+.arrow__image img {
+  width: 100px;
+}
+
+.about {
+  text-align: center;
+}
+.about__card {
+  display: inline-block;
+  max-width: 300px;
+  padding: 10px;
+  margin: 20px;
+}
+.about__image img {
+  width: 150px;
+}
+.about__title {
+  color: #039267;
+  padding: 20px;
+  font-size: 26pt;
+  font-weight: 300;
+}
+.about__text {
+  color: #858585;
+}
+.about__info {
+  margin: 40px;
+}
+
+.footer, .top {
+  background-image: url(../image/main.jpg);
+  padding: 20px;
+  color: white;
+}
+.footer__info, .top__info {
+  text-align: center;
+}
+.footer__info a, .top__info a {
+  text-decoration: none;
+  color: #dfdede;
+}
+.footer__info a:hover, .top__info a:hover {
+  text-decoration: underline;
+}
+
+.top a {
+  text-decoration: none;
+}
+
+.title {
+  color: #858585;
+  font-size: 30pt;
+}
+
+.register, .signin {
+  text-align: center;
+}
+
+.form {
+  max-width: 500px;
+  padding: 20px;
+  margin: auto;
+}
+.form input[type=submit] {
+  color: white;
+  background-color: #039267;
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  min-width: 200px;
+}
+.form input[type=text], .form input[type=password] {
+  margin: 10px;
+  border: 1px solid #dfdede;
+  border-radius: 30px;
+  font-size: 18pt;
+}
+.form textarea {
+  border-radius: 30px;
+  padding: 10px;
+}
+.form select {
+  border-radius: 30px;
+  min-width: 200px;
+}
+
+.signin {
+  margin: 40px;
+}
+.signin__form {
+  max-width: 250px;
+  padding: 50px;
+}
+
+.info {
+  display: inline-block;
+  text-align: center;
+}
+.info a {
+  text-decoration: none;
+  color: white;
+  background-color: #cc3434;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 10px;
+  width: 150px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+.info__text {
+  position: absolute;
+  left: 40%;
+  top: 30px;
+  font-size: 24pt;
+}
+
+.add-new-area {
+  max-width: 300px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.areas {
+  max-width: 70%;
+  text-align: center;
+  display: inline-block;
+  padding: 20px;
+}
+.areas a {
+  text-decoration: none;
+  color: #424242;
+}
+.areas__block {
+  width: 300px;
+  margin: 20px;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: #dfdede;
+  min-height: 50px;
+}
+.areas__block:hover {
+  background-color: #858585;
+}
+
+.back-list {
+  display: inline-block;
+  text-align: center;
+}
+.back-list a {
+  text-decoration: none;
+  color: white;
+  background-color: #3581b4;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 10px;
+  width: 150px;
+  position: absolute;
+  right: 230px;
+  top: 30px;
+}
+
+.back-area {
+  display: inline-block;
+  text-align: center;
+}
+.back-area a {
+  text-decoration: none;
+  color: white;
+  background-color: #3581b4;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 10px;
+  min-width: 150px;
+  position: absolute;
+  right: 430px;
+  top: 30px;
+}
+
+.settings {
+  display: inline-block;
+}
+.settings img {
+  width: 30px;
+}
+.settings a {
+  background-color: transparent;
+  border-radius: 0px;
+  display: inline-block;
+  width: 30px;
+  position: absolute;
+  top: 30px;
+  left: 400px;
+}
+
+.area-info {
+  display: inline-block;
+  background-color: #dfdede;
+  width: 30%;
+  padding: 40px;
+}
+
+.tasks {
+  display: inline-block;
+  padding: 20px;
+  position: absolute;
+  top: 130px;
+}
+.tasks__task {
+  border: 1px solid #dfdede;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 10px;
+}
+.tasks__task input[type=submit] {
+  background-color: #cc3434;
+  border: none;
+  padding: 2px;
+  color: white;
+  cursor: pointer;
+}
+
+ol a {
+  text-decoration: none;
+  color: #858585;
+}
+ol a:hover {
+  text-decoration: underline;
+}
+
+.info-user {
+  text-align: center;
+  padding: 40px;
+}
+
+.info-task {
+  display: inline-block;
+  padding: 40px;
+}
+.info-task div {
+  margin: 20px;
+}
+.info-task input[type=submit] {
+  background-color: #cc3434;
+  border: none;
+  padding: 2px;
+  color: white;
+  cursor: pointer;
+}
+
+.delete-area {
+  position: absolute;
+  top: 40px;
+  left: 550px;
+}
+.delete-area input {
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  background-color: #f3f35d;
+  border-radius: 30px;
+  font-size: 12pt;
+}
+
+.control {
+  text-align: center;
+}
+.control div {
+  display: inline-block;
+}
+.control table {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+.control table td {
+  border: 1px solid #dfdede;
+  padding: 10px;
+}
+.control table input[type=submit] {
+  background-color: #cc3434;
+  border: none;
+  padding: 2px;
+  color: white;
+  cursor: pointer;
+}
+.control__users {
+  margin-left: 100px;
+  margin-bottom: 30px;
+}

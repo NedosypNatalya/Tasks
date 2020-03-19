@@ -1,0 +1,31 @@
+{%extends "base.html.twig"%}
+{%block title%} Войти {%endblock%}
+{%block top%}
+<div class="top">
+    <a href="index.php">
+        <div class="logo">
+            <div class="logo__image">
+                <img alt="logo" src="./assets/image/logo.png">
+            </div>
+            <div class="logo__header">Tasks</div>
+        </div>
+    </a>
+</div>
+{%endblock%}
+{%block document%} 
+    <div class="signin">
+        <div class="title">Войти на сайт</div>
+        <div class="signin__form form">
+            <form action="authorization.php" method="post"  onsubmit="return validateSignin();">
+                <table><tbody>
+                <tr><td>логин</td><td><input type="text" name="login" id="login"></td></tr>
+                <tr><td>пароль</td><td><input type="password" name="password" id="password"></td></tr>
+                </tbody></table>
+                <input type="submit" value="Войти">
+            </form>
+        </div>
+    </div>
+ {%endblock%}
+ {%block script%}
+    <script src="./assets/js/validate.js"></script>
+ {%endblock%}

@@ -1,0 +1,74 @@
+{%extends "base.html.twig"%}
+{%block title%} {{ login }} {%endblock%}
+{%block top%}
+<div class="top">
+    <a href="index.php">
+        <div class="logo">
+            <div class="logo__image">
+                <img alt="logo" src="./assets/image/logo.png">
+            </div>
+            <div class="logo__header">Tasks</div>
+        </div>
+    </a>
+    <div class="delete-area">
+        <form method="post">
+            <input type="submit" value="Удалить область" name="delete">
+        </form>
+    </div>
+    <div class="back-area">
+        <a href="area.php?id={{ id_place }}">Вернуться к области</a>
+    </div>
+    <div class="back-list">
+        <a href="profile.php">К списку областей</a>
+    </div>
+    <div class="info">
+        <a href="index.php"> Выйти </a>
+    </div>
+</div>
+{%endblock%}
+{%block document%}
+    <div class="control">
+        <div class="control__update form">
+            <form method="post">
+                Название <input type="text" name="title" value="{{ title }}">
+                Описание <textarea name="description" cols="50" rows="5"> {{ description }} </textarea>
+                <input type="submit" value="Сохранить" name="change_title_or_description">
+            </form>
+        </div>
+        <div class="control__added-user form">
+            <form method="post">
+                Логин <input type="text" name="login_new_user">
+                <input type="checkbox" name="added_admin" value="true"> администратор
+                <input type="submit" value="Добавить участника" name="added_new_user"> {{ message }}
+            </form>
+        </div><br>
+        <div class="control__admins">
+            <h3>Администраторы:</h3>
+            <table>
+                {% for v in admin_users %}
+                    {% if v.id == id%}
+                        <tr><td>{{ v.login }}</td>
+                    {% else %}
+                        <tr><td><a href="user.php?user={{ v.id }}">{{ v.login }}</a></td>
+                    {% endif %}
+                    <td><form method="post"><input type="hidden" name="delete_id_admin" value="{{ v.id }}">
+                    <input type="submit" name="delete_admin" value="Удалить"></form></td></tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="control__users">
+            <h3>Участники:</h3>
+            <table>
+                {% for v in all_users %}
+                    {% if v.id == id%}
+                        <tr><td>{{ v.login }}</td>
+                    {% else %}
+                        <tr><td><a href="user.php?user={{ v.id }}">{{ v.login }}</a></td>
+                    {% endif %}
+                    <td><form method="post"><input type="hidden" name="delete_id_user" value="{{ v.id }}">
+                    <input type="submit" name="delete_user" value="Удалить"></form></td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{%endblock%}

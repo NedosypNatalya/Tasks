@@ -1,0 +1,75 @@
+{%extends "base.html.twig"%}
+{%block title%} Профиль {%endblock%}
+{%block top%}
+<div class="top">
+    <a href="index.php">
+        <div class="logo">
+            <div class="logo__image">
+                <img alt="logo" src="./assets/image/logo.png">
+            </div>
+            <div class="logo__header">Tasks</div>
+        </div>
+    </a>
+    <div class="back-list">
+        <a href="profile.php">К списку областей</a>
+    </div>
+    <div class="info">
+        {% if admin %}
+        <div class="settings"><a href="settings.php?id={{id_place}}"><img src="./assets/image/settings.png"></a></div>
+        {% endif %}
+        <div class="info__text">{{ title }}</div>
+        <a href="index.php"> Выйти </a>
+    </div>
+</div>
+{%endblock%}
+{%block document%}
+    <div class="area-info">
+        <div class="area-info__description"><h3>Описание:</h3>{{ description }}</div>
+        <div class="area-info__form form">
+            <form method="post">
+                Название <input type="text" name="title-task">
+                Описание <textarea name="text-task" cols="30" rows="5"></textarea>
+                Выполняющий <select name="user-do">
+                        {% for v in all_users %}
+                            <option value="{{ v.id }}">{{ v.login }}</option>
+                        {% endfor %}
+                    </select>
+                <input type="submit" value="Добавить задание" name="added-task">
+            </form>
+        </div>
+        <h3>Администраторы:</h3><ol>{% for v in admin_users %}
+                        {% if v.id == id %} <!-- если администратор является текущим пользователем то ссылка на профиль не нужна -->
+                           <li> {{ v.login }} </li>
+                        {% else %} <!-- если этот пользователь не является текущим, то создать на его профиль ссылку -->
+                            <li><a href="user.php?user= {{ v.id }}"> {{ v.login }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    </ol>
+    <h3>Участники:</h3><ol>
+                {% for v in all_users %}
+                    {% if v.id == id%} <!-- если администратор является текущим пользователем то ссылка на профиль не нужна -->
+                            <li>{{ v.login }}</li>
+                        {% else %} <!-- если этот пользователь не является текущим, то создать на его профиль ссылку -->
+                            <li><a href="user.php?user= {{ v.id }}"> {{ v.login }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                </ol>
+    </div>
+    <div class="tasks">
+        {% for v in tasks %}
+            {% if v.complete %}
+                {% set status = 'закрыта'%}
+            {% else %}
+                {% set status = 'открыта'%}
+            {% endif %}
+            <div class="tasks__task">
+                <form method="post">
+                    <input type="hidden" name="delete-id-task" value="{{ v.id }}">
+                    <input type="submit" value="X" name="delete-task">
+                </form>
+                <a href="task.php?task-id={{ v.id }}">{{ v.title}}</a><br>
+                <span>{{ status }}</span>
+                </div>
+        {% endfor %}
+    </div>
+{%endblock%}

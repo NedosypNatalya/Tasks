@@ -1,0 +1,35 @@
+{%extends "base.html.twig"%}
+{%block title%} Регистрация {%endblock%}
+{%block top%}
+<div class="top">
+    <a href="index.php">
+        <div class="logo">
+            <div class="logo__image">
+                <img alt="logo" src="./assets/image/logo.png">
+            </div>
+            <div class="logo__header">Tasks</div>
+        </div>
+    </a>
+</div>
+{%endblock%}
+{%block document%} 
+    <div class="register">
+        <div class="title">Регистрация</div>
+        <div class="register__form form">
+            <form action="authorization.php" method="post" onsubmit="return validateRegister();">
+                <table><tbody>
+                <tr><td>имя</td><td><input type="text" name="name" id="name"></td></tr>
+                <tr><td>фамилия</td><td><input type="text" name="surname" id="surname"></td></tr>
+                <tr><td>почта</td><td><input type="text" name="email" id="email"></td></tr>                   
+                <tr><td>логин</td><td><input type="text" name="login" id="login"> <span style="color:red;">{{mesage_error_login}}</span></td></tr>
+                <tr><td>пароль</td><td><input type="password" name="password"  id="password"></td></tr>
+                <tr><td>повторите пароль</td><td><input type="password" name="confirm"  id="confirm"></td></tr>
+                </tbody></table>
+                <input type="submit" value="Зарегистрироваться" id="register-submit">
+            </form>
+        </div>
+    </div>
+ {%endblock%}
+ {%block script%}
+    <script src="./assets/js/validate.js"></script>
+ {%endblock%}

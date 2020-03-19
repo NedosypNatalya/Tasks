@@ -1,0 +1,37 @@
+{%extends "base.html.twig"%}
+{%block title%} {{ login }} {%endblock%}
+{%block top%}
+<div class="top">
+    <a href="index.php">
+        <div class="logo">
+            <div class="logo__image">
+                <img alt="logo" src="./assets/image/logo.png">
+            </div>
+            <div class="logo__header">Tasks</div>
+        </div>
+    </a>
+    <div class="back-area">
+        <a href="area.php?id={{ id_place }}">Вернуться к области</a>
+    </div>
+    <div class="back-list">
+        <a href="profile.php">К списку областей</a>
+    </div>
+    <div class="info">
+        <a href="index.php"> Выйти </a>
+    </div>
+</div>
+{%endblock%}
+{%block document%}
+    <div class="info-task">
+        <div class="info-task__title"><h3>Название:</h3> {{ title }}</div>
+        <div class="info-task__text"><h3>Описание:</h3> {{ text }}</div>
+        <div class="info-task__status">
+            <h3>Статус:</h3> {% if status %} закрыта
+            {% else %} открыта
+                       <form method="post"><input type="submit" name="close-task" value="Закрыть"></form>
+             {% endif %}
+        </div>
+        <div class="info-task__date-complete"><h3>Дата выполнения:</h3> {{ date_complete }}</div>
+        <div class="info-task__user-do"><h3>Выполняющий: </h3><a href="user.php?user={{ user_do }}">{{ user_do_login }}</a></div>
+    </div>
+{%endblock%}

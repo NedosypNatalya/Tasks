@@ -1,0 +1,38 @@
+{%extends "base.html.twig"%}
+{%block title%} Профиль {%endblock%}
+{%block top%}
+<div class="top">
+    <a href="index.php">
+        <div class="logo">
+            <div class="logo__image">
+                <img alt="logo" src="./assets/image/logo.png">
+            </div>
+            <div class="logo__header">Tasks</div>
+        </div>
+    </a>
+    <div class="info">
+        <div class="info__text">{{login}}({{fullname}})</div>
+        <a href="index.php"> Выйти </a>
+    </div>
+</div>
+{%endblock%}
+{%block document%} 
+    <div class="areas">
+        <div class="areas__title title">Список областей: </div>
+        <div class="areas__blocks">
+            {% for value in place %}
+                <a href="area.php?id={{value.id}}"><div class="areas__block">{{value['title']}}</div></a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="add-new-area">
+        <div class="add-new-area__form form">
+            <form method="post">
+                Название <input type="text" name="create_place_title">
+                Описание <textarea name="create_place_description" cols="30" rows="5"></textarea><br>
+                <input type="submit" value="Добавить новую область">
+            </form>
+        </div>
+    </div>
+{%endblock%}
